@@ -18,7 +18,7 @@ def test_str_format():
     value = "abc"
     assert "value = {}".format(value) == res
 
-@pytest.mark.parametrize('set_A, set_B, res', [({1,2}, {2,3}, {1,2,3}), ({1,2}, {3,4}, {1,2,3,4}), ({1,2}, set(), {1,2}), (set(), set(), set())])
+@pytest.mark.parametrize('set_A, set_B, res', [({1,2}, {1,2}, {1,2}), ({1,2}, {2,3}, {1,2,3}), ({1,2}, {3,4}, {1,2,3,4}), ({1,2}, set(), {1,2}), (set(), set(), set())])
 def test_set_union(set_A, set_B, res):
     assert res == set_A.union(set_B)
 
